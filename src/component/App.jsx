@@ -1,7 +1,7 @@
 import React from 'react';
 import { DatePicker } from 'antd';
 import './App.less';
-import FormAnt from './myapp/FormAnt';
+import FormAnt from './myApp/FormAnt';
 
 const App = () =>
   <FormAnt />
