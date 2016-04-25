@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Input, Button, Checkbox} from 'antd';
+import { Form, Input, Button, Checkbox } from 'antd';
 const FormItem = Form.Item;
 
 let FormAnt = React.createClass({
@@ -7,7 +7,7 @@ let FormAnt = React.createClass({
     e.preventDefault();
     console.log('收到表单值：', this.props.form.getFieldsValue());
     console.log('收到表单值：', this.props.form.getFieldValue('userName'));
-
+    
   },
 
   render() {
