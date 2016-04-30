@@ -1,11 +1,13 @@
 import React from 'react';
-import './App.less';
+import { DatePicker } from 'antd';
 import FormAnt from './myApp/FormAnt';
-
+import './App.less';
 const App = () =>
-  <FormAnt />
-;
-
+<div>
+	<div style= {{ margin: '0 auto', width: '800px', background: 'red' }}>center</div>
+	<DatePicker />
+	<FormAnt />
+</div>;
 
 export default App;
 
