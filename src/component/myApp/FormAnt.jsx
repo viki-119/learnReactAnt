@@ -103,7 +103,7 @@ const FormAnt = React.createClass({
           <Input {...textareaProps} type="textarea" placeholder="随便写" />
         </FormItem>
         <FormItem {...formItemLayout} label="select：">
-          <Select {...getFieldProps('name')} style={{ width: 120 }} onSelect={this.handleChange}>
+          <Select {...getFieldProps('name', { initialValue: 'jack' })} style={{ width: 120 }} onSelect={this.handleChange}>
             <Option value="jack">Jack</Option>
             <Option value="lucy">Lucy</Option>
             <Option value="yiminghe">Yiminghe</Option>
