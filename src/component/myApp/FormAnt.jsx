@@ -6,12 +6,26 @@ const InputGroup = Input.Group;
 const RadioGroup = Radio.Group;
 
 const FormAnt = React.createClass({
-  form: PropTypes.any,
+  propTypes: {
+    form: PropTypes.any,
+  },
+
   getInitialState() {
     return {
       value: 'b',
     };
   },
+
+  onChange(e) {
+    console.log('radio checked', e.target.value);
+    this.setState({
+      value: e.target.value,
+    });
+  },
+  handleChange(value, option) {
+    console.log({ value }, option.props.children);
+  },
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.form.validateFields((errors, values) => {
@@ -26,19 +40,9 @@ const FormAnt = React.createClass({
     //   textarea: 'haha',
     // });
   },
-
   handleReset(e) {
     e.preventDefault();
     this.props.form.resetFields();
-  },
-  onChange(e) {
-    console.log('radio checked', e.target.value);
-    this.setState({
-      value: e.target.value,
-    });
-  },
-  handleChange(value, option) {
-    console.log({ value }, option.props.children);
   },
 
   render() {
