@@ -25,7 +25,13 @@ const FormAnt = React.createClass({
   handleChange(value, option) {
     console.log({ value }, option.props.children);
   },
-
+  limitMemo(rule, value, callback) {
+    if (value && value.length > 200) {
+      callback('字符不能超过200');
+    } else {
+      callback();
+    }
+  },
   handleSubmit(e) {
     e.preventDefault();
     this.props.form.validateFields((errors, values) => {
@@ -57,7 +63,12 @@ const FormAnt = React.createClass({
           required: this.state.value === 4 ? true : false,
           message: '真的不打算写点什么吗？',
         },
+        {
+          validator: this.limitMemo,
+        },
       ],
+      initialValue: 'jack',
+      onChange: this.handleReset,
     });
     const formItemLayout = {
       labelCol: { span: 7, offset: 2 },
@@ -107,7 +118,8 @@ const FormAnt = React.createClass({
           <Input {...textareaProps} type="textarea" placeholder="随便写" />
         </FormItem>
         <FormItem {...formItemLayout} label="select：">
-          <Select {...getFieldProps('name', { initialValue: 'jack' })} style={{ width: 120 }} onSelect={this.handleChange}>
+          <Select {...getFieldProps('name', { initialValue: 'jack' })}
+          style={{ width: 120 }} onSelect={this.handleChange}>
             <Option value="jack">Jack</Option>
             <Option value="lucy">Lucy</Option>
             <Option value="yiminghe">Yiminghe</Option>
