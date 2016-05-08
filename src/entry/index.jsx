@@ -6,7 +6,8 @@ import App from '../component/App';
 // import FormAnt from '../component/myApp/FormAnt';
 import SelectAnt from '../component/myApp/SelectAnt';
 
-const routes = [{
+const routes =
+[{
   path: '/',
   component: App,
   childRoutes: [
@@ -14,7 +15,7 @@ const routes = [{
     { path: 'about', component: App },
   ],
 }, {
-  path: '/xxx',
+  path: '/selectAnt',
   component: SelectAnt,
 }];
 

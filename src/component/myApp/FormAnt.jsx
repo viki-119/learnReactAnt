@@ -60,7 +60,7 @@ const FormAnt = React.createClass({
     const textareaProps = getFieldProps('textarea', {
       rules: [
         {
-          required: this.state.value === 4 ? true : false,
+          required: this.state.value === 4,
           message: '真的不打算写点什么吗？',
         },
         {
