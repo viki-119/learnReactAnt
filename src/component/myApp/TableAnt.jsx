@@ -4,6 +4,9 @@ import React from 'react';
 const Option = Select.Option;
 const TableAnt = React.createClass({
 	getInitialState() {
+		this.columns = [{
+		}];
+
 		return {
 			data: [
 { key: 1, name: '胡彦斌', age: 32, address: '西湖区湖底公园1号', description: '我是胡彦斌，今年32岁，住在西湖区湖底公园1号。' },

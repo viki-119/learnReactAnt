@@ -23,13 +23,7 @@ const SelectAnt = React.createClass({
 	onSelect(value, option) {
 		console.log({ value }, option.props.children);
 	},
-	limitMemo(rule, value, callback) {
-		if (value && value.length > 200) {
-			callback('字符不能超过200');
-		} else {
-			callback();
-		}
-	},
+
 	handleSubmit(e) {
 		e.preventDefault();
 		this.props.form.validateFields((errors) => {
@@ -51,6 +45,17 @@ const SelectAnt = React.createClass({
 		// this.props.form.resetFields(['userName', 'nickName']);
 	},
 
+	onDuplicate() {
+		alert('xx');
+	},
+
+	limitMemo(rule, value, callback) {
+		if (value && value.length > 200) {
+			callback('字符不能超过200');
+		} else {
+			callback();
+		}
+	},
 	render() {
 		const { getFieldProps } = this.props.form;
 		// getFieldProps('userName')是进行双向数据绑定用的，可以用来做检索传值
@@ -135,8 +140,13 @@ const SelectAnt = React.createClass({
 				<Row>
 					<Col span="10" offset="1">
 						<FormItem {...formItemLayout} label="带搜索框select：">
-							<Select showSearch style={{ width: 300 }} placeholder="请选择人员" optionFilterProp="children"
-								notFoundContent="无法找到">
+							<Select showSearch
+								style={{ width: 300 }}
+								placeholder="请选择人员"
+								optionFilterProp="children"
+								notFoundContent="无法找到"
+								{...getFieldProps('Duplicate', { initialValue: '', onChange: this.onDuplicate })}
+								>
 								<Option key="jack">杰克</Option>
 								<Option key="lucy">露西</Option>
 								<Option key="tom">汤姆</Option>

@@ -8,6 +8,7 @@ import SelectAnt from '../component/myApp/SelectAnt';
 import TableAnt from '../component/myApp/TableAnt';
 import UploadAnt from '../component/myApp/UploadAnt';
 import DropdownAnt from '../component/myApp/DropdownAnt';
+import Validate from '../component/myApp/Validate';
 
 const routes =
 [{
@@ -29,6 +30,9 @@ const routes =
 }, {
 	path: '/dropdownAnt',
 	component: DropdownAnt,
+}, {
+	path: '/validate',
+	component: Validate,
 }];
 
 ReactDOM.render(<Router routes= {routes} />, document.getElementById('react-content'));
