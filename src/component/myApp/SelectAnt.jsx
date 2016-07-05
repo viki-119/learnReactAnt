@@ -24,6 +24,9 @@ const SelectAnt = React.createClass({
 		console.log({ value }, option.props.children);
 	},
 
+	onDuplicate() {
+		alert('xx');
+	},
 	handleSubmit(e) {
 		e.preventDefault();
 		this.props.form.validateFields((errors) => {
@@ -38,6 +41,7 @@ const SelectAnt = React.createClass({
 		//   textarea: 'haha',
 		// });
 	},
+
 	handleReset(e) {
 		e.preventDefault();
 		this.props.form.resetFields();
@@ -45,13 +49,9 @@ const SelectAnt = React.createClass({
 		// this.props.form.resetFields(['userName', 'nickName']);
 	},
 
-	onDuplicate() {
-		alert('xx');
-	},
-
-	limitMemo(rule, value, callback) {
+	limit(rule, value, callback) {
 		if (value && value.length > 200) {
-			callback('字符不能超过200');
+			callback('字符不能超过500');
 		} else {
 			callback();
 		}
@@ -69,7 +69,7 @@ const SelectAnt = React.createClass({
 					message: '真的不打算写点什么吗？',
 				},
 				{
-					validator: this.limitMemo,
+					validator: this.limit,
 				},
 			],
 			initialValue: '',

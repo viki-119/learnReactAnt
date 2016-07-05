@@ -31,6 +31,15 @@ const UploadAnt = React.createClass({
 				});
 			},
 		};
+		const root1 = (
+		<ul className="my-list">
+			<li style={{ color: 'white' }}>First Text Content</li>
+			<li>Second Text Content</li>
+		</ul>
+		);
+		const child1 = React.createElement('li', null, 'First Text Content');
+		const child2 = React.createElement('li', null, 'Second Text Content');
+		const root2 = React.createElement('ul', { className: 'my-list', style: { color: 'red', fontSize: 14 } }, child1, child2, child1);
 		return (
 			<div className="clearfix">
 				<Upload {...props}>
@@ -44,6 +53,12 @@ const UploadAnt = React.createClass({
 				<Modal visible={this.state.priviewVisible} footer={null} onCancel={this.handleCancel}>
 					<img alt="example" src={this.state.priviewImage} />
 				</Modal>
+				<div style={{ background: 'red' }}>
+					{root1}
+				</div>
+				<div style={{ background: 'yellow' }}>
+					{root2}
+				</div>
 			</div>
 		);
 	},
