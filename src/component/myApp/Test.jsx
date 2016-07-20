@@ -12,6 +12,7 @@ function foo(x, y) {
 const Test = React.createClass({
 	getInitialState() {
 		return {
+			"data": "",
 		};
 	},
 	render() {
