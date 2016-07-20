@@ -13,7 +13,6 @@ const Test = React.createClass({
 	getInitialState() {
 		return {
 			"data": "",
-			"item": false,
 		};
 	},
 	render() {
